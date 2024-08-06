@@ -1,3 +1,3 @@
 FROM openjdk
-COPY target/*.jar app.jar
+COPY targetff/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
