@@ -34,14 +34,14 @@ pipeline {
         // }
         stage('Docker Build') {
             steps {
-                sh 'docker build -t jagdish1983/spring-petclinic:latest .'
+                sh 'docker build -t subham14/my-docker-images:latest .'
             }
         }
         stage('Docker Push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
                     sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                    sh 'docker push jagdish1983/spring-petclinic:latest'
+                    sh 'docker push subham14/my-docker-images:latest'
                 }
             }
 
